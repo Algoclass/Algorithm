@@ -1,7 +1,7 @@
 Algorithm
 =========
 
-This repository is to contain my school project for Plagiarism checking. It will compare time complexity for different algorithms
+This repository is to contain our school project for Plagiarism checking. It will compare time complexity for different algorithms
 
 
 =========
