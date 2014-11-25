@@ -13,9 +13,25 @@ public class IterateDir
 		for (File file : files) {
 			if (file.isDirectory()) {
 				System.out.println("Directory: " + file.getName());
-				showFiles(file.listFiles()); // Algo class wali recursion Baby
+				showFiles(file.listFiles()); // Algo class wali recursion Baby!!
 			} else {
 				System.out.println("File: " + file.getName());
+				 try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+				        StringBuilder sb = new StringBuilder();
+				        String line = br.readLine();
+
+				        while (line != null) {
+				            sb.append(line);
+				            sb.append(System.lineSeparator());
+				            line = br.readLine();
+				        }
+				        String contents = sb.toString();
+				        System.out.println(contents);
+				    } catch (FileNotFoundException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 			}
 		}
 	}
