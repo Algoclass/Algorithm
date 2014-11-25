@@ -20,7 +20,7 @@ public class IterateDir
 				        StringBuilder sb = new StringBuilder();
 				        String line = br.readLine();
 
-				        while (line != null) {
+				        while (line != null) {// nice
 				            sb.append(line);
 				            sb.append(System.lineSeparator());
 				            line = br.readLine();
