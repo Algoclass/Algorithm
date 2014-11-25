@@ -13,7 +13,7 @@ public class IterateDir
 	    for (File file : files) {
 	        if (file.isDirectory()) {
 	            System.out.println("Directory: " + file.getName());
-	            showFiles(file.listFiles()); // Calls same method again.
+	            showFiles(file.listFiles()); // Algo class wali recursion Baby
 	        } else {
 	            System.out.println("File: " + file.getName());
 	        }
