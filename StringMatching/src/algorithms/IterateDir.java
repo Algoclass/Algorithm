@@ -59,7 +59,7 @@ public class IterateDir
 				line = br.readLine();
 			}
 			String contents = sb.toString();
-			//System.out.println(contents);
+			System.out.println(contents);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
