@@ -3,8 +3,8 @@ package algorithms;
 public class Lcss {
 
 	public static void main(String[] args) {
-		String str1 = "abhinav";
-		String str2="acsbdwvhgvrigbrbnbtbavfwtb";
+		String str1 = "abhinav bansal";
+		String str2="acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsn acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsnl";
 		char [] str1char= str1.toCharArray();
 		char [] str2char= str2.toCharArray();
 		int [][] box=new int[str1.length()+1][str2.length()+1];	

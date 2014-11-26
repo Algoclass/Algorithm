@@ -30,8 +30,9 @@ public class NaiveString {
 	public static void main(String args[])
 	{
 	   String t = "AABAACAADAABAAABAA";
+		// String t = "Abhinav Bansal";
 	   char txt[]=t.toCharArray();
-	   String p= "AABA";
+	   String p= "Abhinav BA";
 	   char pat[]=p.toCharArray();
 	   search(pat, txt);
 	}
