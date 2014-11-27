@@ -1,0 +1,500 @@
+RXCUI|INGREDIENT|ING_RXCUI
+1000000|Hydrochlorothiazide|5487
+1000000|Amlodipine|17767
+1000000|olmesartan|321064
+1000001|Hydrochlorothiazide|5487
+1000001|Amlodipine|17767
+1000001|olmesartan|321064
+1000005|Hydrochlorothiazide|5487
+1000005|Amlodipine|17767
+1000005|olmesartan|321064
+1000009|dimethicone|324072
+1000009|Zinc Oxide|11423
+1000009|Miconazole|6932
+1000015|western wheatgrass pollen extract|852659
+1000026|Methenamine|6832
+1000028|Methenamine|6832
+1000028|sodium phosphate|36709
+1000030|Methenamine|6832
+1000030|Sodium Phosphate, Monobasic|235496
+1000048|Doxepin|3638
+1000054|Doxepin|3638
+1000058|Doxepin|3638
+1000064|Doxepin|3638
+1000070|Doxepin|3638
+1000076|Doxepin|3638
+1000085|alcaftadine|1000082
+1000089|alcaftadine|1000082
+1000091|Doxepin|3638
+1000093|Doxepin|3638
+1000095|Doxepin|3638
+1000097|Doxepin|3638
+1000107|incobotulinumtoxin A|1000104
+1000111|incobotulinumtoxin A|1000104
+1000114|Medroxyprogesterone|6691
+1000124|Medroxyprogesterone|6691
+1000126|Medroxyprogesterone|6691
+1000128|Medroxyprogesterone|6691
+1000131|Medroxyprogesterone|6691
+1000133|Medroxyprogesterone|6691
+1000135|Medroxyprogesterone|6691
+1000139|Medroxyprogesterone|6691
+1000141|Medroxyprogesterone|6691
+1000145|Medroxyprogesterone|6691
+1000153|Medroxyprogesterone|6691
+1000154|Medroxyprogesterone|6691
+1000156|Medroxyprogesterone|6691
+1000158|Medroxyprogesterone|6691
+1000351|Estrogens, Conjugated (USP)|4099
+1000351|Medroxyprogesterone|6691
+1000352|Estrogens, Conjugated (USP)|4099
+1000352|Medroxyprogesterone|6691
+1000355|Estrogens, Conjugated (USP)|4099
+1000355|Medroxyprogesterone|6691
+1000356|Estrogens, Conjugated (USP)|4099
+1000356|Medroxyprogesterone|6691
+1000364|Medroxyprogesterone|6691
+1000373|Medroxyprogesterone|6691
+1000374|Medroxyprogesterone|6691
+1000376|Medroxyprogesterone|6691
+1000380|Medroxyprogesterone|6691
+1000384|Medroxyprogesterone|6691
+1000386|Medroxyprogesterone|6691
+1000405|Norethindrone|7514
+1000407|Norethindrone|7514
+1000480|Bisacodyl|1596
+1000480|POLYETHYLENE GLYCOL 3350|221147
+1000480|Potassium Chloride|8591
+1000480|Sodium Chloride|9863
+1000480|Sodium Bicarbonate|36676
+1000487|Estrogens, Conjugated (USP)|4099
+1000487|Medroxyprogesterone|6691
+1000491|Estrogens, Conjugated (USP)|4099
+1000491|Medroxyprogesterone|6691
+1000495|resveratrol|1000492
+1000497|Estrogens, Conjugated (USP)|4099
+1000497|Medroxyprogesterone|6691
+1000498|Vitamin A|11246
+1000498|Beta Carotene|19143
+1000499|Estrogens, Conjugated (USP)|4099
+1000499|Medroxyprogesterone|6691
+1000500|Estrogens, Conjugated (USP)|4099
+1000500|Medroxyprogesterone|6691
+1000555|Sulfur|10223
+1000555|Sulfacetamide|10169
+1000556|Fluorometholone|4491
+1000556|Sulfacetamide|10169
+1000558|Fluorometholone|4491
+1000558|Sulfacetamide|10169
+1000592|autologous cultured chondrocytes|1000589
+1000596|autologous cultured chondrocytes|1000589
+1000636|dimethicone|324072
+1000638|Pilocarpine|8328
+1000642|Pilocarpine|8328
+1000647|Pilocarpine|8328
+1000656|Pilocarpine|8328
+1000660|Pilocarpine|8328
+1000664|Pilocarpine|8328
+1000668|Pilocarpine|8328
+1000670|Pilocarpine|8328
+1000673|Sulfacetamide|10169
+1000678|Sulfacetamide|10169
+1000682|Sulfacetamide|10169
+1000713|Sulfacetamide|10169
+1000717|Sulfacetamide|10169
+1000731|Sulfur|10223
+1000731|Sulfacetamide|10169
+1000736|Sulfur|10223
+1000736|Sulfacetamide|10169
+1000859|Sulfur|10223
+1000859|Sulfacetamide|10169
+1000861|Sulfur|10223
+1000861|Sulfacetamide|10169
+1000862|Pilocarpine|8328
+1000870|Pilocarpine|8328
+1000876|Pilocarpine|8328
+1000895|Sulfur|10223
+1000895|Sulfacetamide|10169
+1000897|Pilocarpine|8328
+1000903|Pilocarpine|8328
+1000907|Pilocarpine|8328
+1000913|Pilocarpine|8328
+1000915|Pilocarpine|8328
+1000921|Sulfur|10223
+1000921|Sulfacetamide|10169
+1000939|Pilocarpine|8328
+1000946|Sulfur|10223
+1000946|Sulfacetamide|10169
+1000976|Sulfur|10223
+1000976|Sulfacetamide|10169
+1000978|Oxymetazoline|7812
+1000981|Oxymetazoline|7812
+1000985|Oxymetazoline|7812
+1000990|Oxymetazoline|7812
+1000992|Oxymetazoline|7812
+1000994|Oxymetazoline|7812
+1000996|Oxymetazoline|7812
+1001002|Oxymetazoline|7812
+1001004|Pilocarpine|8328
+1001006|Pilocarpine|8328
+1001010|Oxymetazoline|7812
+1001020|Oxymetazoline|7812
+1001029|Oxymetazoline|7812
+1001054|Oxymetazoline|7812
+1001058|Oxymetazoline|7812
+1001066|Oxymetazoline|7812
+1001079|Epinephrine|3992
+1001079|Pilocarpine|8328
+1001081|Oxymetazoline|7812
+1001082|Epinephrine|3992
+1001082|Pilocarpine|8328
+1001084|Oxymetazoline|7812
+1001086|Epinephrine|3992
+1001086|Pilocarpine|8328
+1001089|Epinephrine|3992
+1001089|Pilocarpine|8328
+1001397|Calcium Carbonate|1897
+1001397|Ergocalciferol|4018
+1001405|docetaxel|72962
+1001407|docetaxel|72962
+1001409|Calcium Carbonate|1897
+1001409|Ergocalciferol|4018
+1001411|Pilocarpine|8328
+1001426|Castor Oil|2129
+1001426|Peruvian balsam|33219
+1001426|TRYPSIN|10890
+1001433|cabazitaxel|996051
+1001437|Caffeine|1886
+1001437|Magnesium Salicylate|52364
+1001459|Caffeine|1886
+1001459|Magnesium Salicylate|52364
+1001476|Aspirin|1191
+1001591|Fibrinogen|4385
+1001591|Thrombin|10528
+1001593|Fibrinogen|4385
+1001593|Thrombin|10528
+1001601|Fibrinogen|4385
+1001601|Thrombin|10528
+1001603|Fibrinogen|4385
+1001603|Thrombin|10528
+1001657|Vitamin B 12|11248
+1001659|Calcium Carbonate|1897
+1001659|Cholecalciferol|2418
+1001659|Soybean preparation|287515
+1001660|Vitamin B 12|11248
+1001679|Calcium Carbonate|1897
+1001679|Cholecalciferol|2418
+1001679|Magnesium Oxide|6582
+1001690|Magnesium Sulfate|6585
+1001690|potassium sulfate|34323
+1001690|sodium sulfate|36721
+1001691|Calcium Carbonate|1897
+1001691|Vitamin K 1|8308
+1001691|Cholecalciferol|2418
+1001692|Calcium Carbonate|1897
+1001692|Ergocalciferol|4018
+1001692|Vitamin K 1|8308
+1001714|Sulfur|10223
+1001714|Sulfacetamide|10169
+1001718|Sulfur|10223
+1001718|Sulfacetamide|10169
+1001751|Calcium Citrate|47613
+1001751|Cholecalciferol|2418
+1001758|Ergocalciferol|4018
+1001758|Calcium Citrate|47613
+1002300|nilotinib|662281
+1005701|Vitamin D|11253
+1005701|Calcium Citrate|47613
+1005705|Vitamin D|11253
+1005705|Calcium Citrate|47613
+1005706|Vitamin D|11253
+1005706|Calcium Citrate|47613
+1005711|Meprobamate|6760
+1005711|pentaerythritol|33055
+1005714|pentaerythritol|33055
+1005714|Phenobarbital|8134
+1005715|pentaerythritol|33055
+1005715|Phenobarbital|8134
+1005716|pentaerythritol|33055
+1005750|Calcium Carbonate|1897
+1005750|Cholecalciferol|2418
+1005750|soy protein isolate|196238
+1005767|Sulfur|10223
+1005767|Sulfacetamide|10169
+1005771|Sulfur|10223
+1005771|Sulfacetamide|10169
+1005819|Sulfur|10223
+1005819|Sulfacetamide|10169
+1005829|Sulfur|10223
+1005829|Sulfacetamide|10169
+1005831|prednisolone|8638
+1005834|Sulfur|10223
+1005834|Sulfacetamide|10169
+1005835|Sulfur|10223
+1005835|Sulfacetamide|10169
+1005845|Sulfur|10223
+1005845|Sulfacetamide|10169
+1005853|Sulfur|10223
+1005853|Sulfacetamide|10169
+1005855|Sulfur|10223
+1005855|Sulfacetamide|10169
+1005856|Sulfur|10223
+1005856|Sulfacetamide|10169
+1005905|halobetasol|41208
+1005905|Lactate|114202
+1005908|Lactate|114202
+1005908|halobetasol|41208
+1005924|ulipristal|1005921
+1005928|ulipristal|1005921
+1006057|Sulfur|10223
+1006057|Sulfacetamide|10169
+1006065|Ethinyl Estradiol|4124
+1006065|Levonorgestrel|6373
+1006065|Inert Ingredients|748794
+1006077|Benzocaine|1399
+1006077|Menthol|6750
+1006079|Menthol|6750
+1006079|Benzocaine|1399
+1006102|Camphor|1952
+1006102|Menthol|6750
+1006102|methyl salicylate|29787
+1006102|Thymol|10553
+1006105|Sulfur|10223
+1006105|Sulfacetamide|10169
+1006107|Sulfacetamide|10169
+1006110|Sulfacetamide|10169
+1006114|Sulfacetamide|10169
+1006116|Sulfacetamide|10169
+1006120|Sulfacetamide|10169
+1006122|Sulfacetamide|10169
+1006230|Ergocalciferol|4018
+1006230|Vitamin A|11246
+1006266|Benzocaine|1399
+1006279|Influenza Virus Vaccine, Inactivated B-Brisbane-60-2008 strain|857921
+1006279|Influenza Virus Vaccine, Inactivated A-Victoria-210-2009 X-187 (H3N2) (A-Perth-16-2009) strain|1005931
+1006279|Influenza Virus Vaccine, Inactivated A-California-07-2009 X-181 (H1N1) strain|1006250
+1006286|Influenza Virus Vaccine, Inactivated B-Brisbane-60-2008 strain|857921
+1006286|Influenza Virus Vaccine, Inactivated A-Victoria-210-2009 X-187 (H3N2) (A-Perth-16-2009) strain|1005931
+1006286|Influenza Virus Vaccine, Inactivated A-California-07-2009 X-181 (H1N1) strain|1006250
+1006357|Russian thistle pollen extract|852158
+1006374|mango blossom pollen extract|1006371
+1006376|mango blossom pollen extract|1006371
+1006439|Sodium Fluoride|9873
+1006445|Polyethylene Glycols|8516
+1006445|Propylene glycol|34693
+1006474|mango blossom pollen extract|1006371
+1006476|mango blossom pollen extract|1006371
+1006478|mango blossom pollen extract|1006371
+1006480|black oak pollen extract|852260
+1006484|nettle pollen extract|852046
+1006486|nettle pollen extract|852046
+1006488|nettle pollen extract|852046
+1006490|rough cocklebur pollen extract|995600
+1006492|rough cocklebur pollen extract|995600
+1006498|Indian wormwood sage pollen extract|1006495
+1006509|tall oat grass pollen extract|1006506
+1006558|Sodium Fluoride|9873
+1006608|dexmethylphenidate|352372
+1006610|dexmethylphenidate|352372
+1006650|Sorbitol|9945
+1006673|Methylcellulose|6873
+1006675|Methylcellulose|6873
+1006679|Urea|11002
+1006683|Sulfacetamide|10169
+1006684|Sulfacetamide|10169
+1006685|Sulfacetamide|10169
+1006686|Sulfacetamide|10169
+1006688|Sulfacetamide|10169
+1006693|Sulfacetamide|10169
+1006703|Sulfacetamide|10169
+1006710|Sulfacetamide|10169
+1006712|Sulfacetamide|10169
+1006791|Dexamethasone|3264
+1006801|Clozapine|2626
+1006803|Clozapine|2626
+1009145|Amphetamine|725
+1009145|Dextroamphetamine|3288
+1009147|Amphetamine|725
+1009147|Dextroamphetamine|3288
+1009212|Immunoglobulin G|5666
+1009216|Epoprostenol|8814
+1009220|Amlodipine|17767
+1009220|aliskiren|325646
+1009239|Sodium Bicarbonate|36676
+1009241|Sodium Bicarbonate|36676
+1009247|Amlodipine|17767
+1009247|aliskiren|325646
+1009249|Amlodipine|17767
+1009249|aliskiren|325646
+1009253|Amlodipine|17767
+1009253|aliskiren|325646
+1009315|Amlodipine|17767
+1009315|aliskiren|325646
+1009319|Amlodipine|17767
+1009319|aliskiren|325646
+1009320|Amlodipine|17767
+1009320|aliskiren|325646
+1009324|Amlodipine|17767
+1009324|aliskiren|325646
+1009339|bimatoprost|283810
+1009341|bimatoprost|283810
+1009375|Benzocaine|1399
+1009416|Lidocaine|6387
+1009428|Lutein|11359
+1009433|Lidocaine|6387
+1009450|wasabi preparation|1009447
+1009454|coffee fruit preparation|1009451
+1009456|incobotulinumtoxin A|1000104
+1009459|incobotulinumtoxin A|1000104
+1009462|Lidocaine|6387
+1009463|Sodium Chloride|9863
+1009464|Lidocaine|6387
+1009473|Calcium Citrate|47613
+1009473|Vitamin D|11253
+1009480|Testosterone|10379
+1010033|Lidocaine|6387
+1010035|Lidocaine|6387
+1010040|Testosterone|10379
+1010053|Lidocaine|6387
+1010057|Lidocaine|6387
+1010077|Lidocaine|6387
+1010234|Sulfur|10223
+1010234|Sulfacetamide|10169
+1010238|Sulfur|10223
+1010238|Sulfacetamide|10169
+1010296|Lidocaine|6387
+1010600|Naloxone|7242
+1010600|Buprenorphine|1819
+1010603|Naloxone|7242
+1010603|Buprenorphine|1819
+1010604|Buprenorphine|1819
+1010604|Naloxone|7242
+1010606|Buprenorphine|1819
+1010606|Naloxone|7242
+1010608|Naloxone|7242
+1010608|Buprenorphine|1819
+1010609|Buprenorphine|1819
+1010609|Naloxone|7242
+1010618|Lidocaine|6387
+1010620|Lidocaine|6387
+1010622|Testosterone|10379
+1010630|Testosterone|10379
+1010654|Methocarbamol|6845
+1010671|Lidocaine|6387
+1010673|Lidocaine|6387
+1010677|Epinephrine|3992
+1010677|Lidocaine|6387
+1010681|Epinephrine|3992
+1010681|Lidocaine|6387
+1010683|Epinephrine|3992
+1010683|Lidocaine|6387
+1010687|Epinephrine|3992
+1010687|Lidocaine|6387
+1010688|Epinephrine|3992
+1010688|Lidocaine|6387
+1010692|Epinephrine|3992
+1010692|Lidocaine|6387
+1010696|carbinoxamine|20220
+1010739|Lidocaine|6387
+1010740|Lidocaine|6387
+1010745|Epinephrine|3992
+1010745|Lidocaine|6387
+1010749|Epinephrine|3992
+1010749|Lidocaine|6387
+1010751|Epinephrine|3992
+1010751|Lidocaine|6387
+1010755|Epinephrine|3992
+1010755|Lidocaine|6387
+1010759|Epinephrine|3992
+1010759|Lidocaine|6387
+1010763|Epinephrine|3992
+1010763|Lidocaine|6387
+1010764|Epinephrine|3992
+1010764|Lidocaine|6387
+1010768|Epinephrine|3992
+1010768|Lidocaine|6387
+1010769|Lidocaine|6387
+1010774|Lidocaine|6387
+1010793|Lidocaine|6387
+1010799|Lidocaine|6387
+1010823|Menthol|6750
+1010835|Lidocaine|6387
+1010836|Lidocaine|6387
+1010844|Lidocaine|6387
+1010846|Lidocaine|6387
+1010860|Lidocaine|6387
+1010878|Lidocaine|6387
+1010895|Lidocaine|6387
+1010897|Hydromorphone|3423
+1010898|Hydromorphone|3423
+1010899|Lidocaine|6387
+1010900|Lidocaine|6387
+1010902|Lidocaine|6387
+1010912|Norepinephrine|7512
+1010920|Ondansetron|26225
+1010931|Lidocaine|6387
+1011080|Tobramycin|10627
+1011080|Dexamethasone|3264
+1011081|Ethinyl Estradiol|4124
+1011081|drospirenone|11636
+1011081|Inert Ingredients|748794
+1011087|ALPHA-D-GALACTOSIDASE ENZYME|259351
+1011093|Lidocaine|6387
+1011131|Lidocaine|6387
+1011252|Lidocaine|6387
+1011272|Lidocaine|6387
+1011482|Cetirizine|20610
+1011485|Cetirizine|20610
+1011625|pegaptanib|498509
+1011626|pegaptanib|498509
+1011646|Epinephrine|3992
+1011646|Articaine|592464
+1011648|Epinephrine|3992
+1011648|Articaine|592464
+1011653|Pegloticase|1011650
+1011657|Pegloticase|1011650
+1011703|Lidocaine|6387
+1011705|Lidocaine|6387
+1011707|Lidocaine|6387
+1011709|Lidocaine|6387
+1011710|Hydrochlorothiazide|5487
+1011710|aliskiren|325646
+1011712|Hydrochlorothiazide|5487
+1011712|aliskiren|325646
+1011713|Hydrochlorothiazide|5487
+1011713|aliskiren|325646
+1011715|Hydrochlorothiazide|5487
+1011715|aliskiren|325646
+1011718|valsartan|69749
+1011718|aliskiren|325646
+1011726|Lidocaine|6387
+1011729|valsartan|69749
+1011729|aliskiren|325646
+1011736|aliskiren|325646
+1011738|aliskiren|325646
+1011739|aliskiren|325646
+1011741|aliskiren|325646
+1011749|Lidocaine|6387
+1011750|Hydrochlorothiazide|5487
+1011750|aliskiren|325646
+1011752|Hydrochlorothiazide|5487
+1011752|aliskiren|325646
+1011753|Hydrochlorothiazide|5487
+1011753|aliskiren|325646
+1011755|Hydrochlorothiazide|5487
+1011755|aliskiren|325646
+1011767|Lidocaine|6387
+1011809|Epinephrine|3992
+1011809|Lidocaine|6387
+1011814|Epinephrine|3992
+1011814|Lidocaine|6387
+1011820|Epinephrine|3992
+1011820|Lidocaine|6387
+1011825|Epinephrine|3992
+1011825|Lidocaine|6387
+1011831|Lidocaine|6387
+1011833|Lidocaine|6387
+1011838|Lidocaine|6387
+1011839|Benzalkonium|1378
+1011839|Lidocaine|6387
+1011841|Benzalkonium|1378

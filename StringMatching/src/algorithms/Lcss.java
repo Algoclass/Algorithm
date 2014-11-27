@@ -2,15 +2,16 @@ package algorithms;
 
 public class Lcss {
 
-	public static void main(String[] args) {
-		String str1 = "abhinav bansal";
-		String str2="acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsn acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsnl";
-		char [] str1char= str1.toCharArray();
-		char [] str2char= str2.toCharArray();
-		int [][] box=new int[str1.length()+1][str2.length()+1];	
+	public static void mainLCSS(String pattern, String text) {
+	//public static void main(String[] args) {
+		//String str1 = "abhinav bansal";
+		//String str2="acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsn acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsnl";
+		char [] str1char= pattern.toCharArray();
+		char [] str2char= text.toCharArray();
+		int [][] box=new int[pattern.length()+1][text.length()+1];	
 
-		for(int i=1;i<=str1.length();i++){
-			for(int j=1;j<=str2.length();j++){
+		for(int i=1;i<=pattern.length();i++){
+			for(int j=1;j<=text.length();j++){
 				if(str1char[i-1]==str2char[j-1]){
 					box[i][j]=1+box[i-1][j-1];
 				}
@@ -19,14 +20,14 @@ public class Lcss {
 				}
 			}
 		}
-		for(int i=0;i<=str1.length();i++){
-			for(int j=0;j<=str2.length();j++){
+		for(int i=0;i<=pattern.length();i++){
+			for(int j=0;j<=text.length();j++){
 				System.out.print(box[i][j]);
 			}
 			System.out.println();
 		}
 
-		String reverse=(printLCSS(box, str1));
+		String reverse=(printLCSS(box, pattern));
 		String substring = new StringBuffer(reverse).reverse().toString();
 		System.out.println(substring);
 	}

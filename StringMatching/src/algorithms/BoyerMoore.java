@@ -3,7 +3,7 @@ package algorithms;
 import java.io.*;
 import java.util.*;
 
-public class BoyerMore {
+public class BoyerMoore {
 
 	final static int  NO_OF_CHARS=100000;
 	static int testCounter = 0;
