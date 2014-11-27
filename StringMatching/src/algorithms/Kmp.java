@@ -54,6 +54,11 @@ public class Kmp {
 				j=q;
 			}
 			if(q==pattern_length){
+				String pattern_match="";
+				for(int k=0;k<=pattern_length;k++){
+					pattern_match=pattern_match+pattern.get(k);
+				}
+				System.out.println("Pattern matched is: "+pattern_match);
 				System.out.println("Pattern occurs with shift "+(i-pattern_length+1));
 				q=prefix_array.get(q);
 			}
