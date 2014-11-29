@@ -8,8 +8,9 @@ public class IterateDir
 	public static void main(String... args) {
 		//File pat=new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/1.txt");
 		//String path="/Users/Devcenter/Dropbox/padhai/sem3/Algo";
-		File documentCorpus = new File("res/Document_corpus");
-		File potentialPlagiarisedFile = new File("res/Potential_plagiarised_files");
+		//File documentCorpus = new File("res/Document_corpus/alt.atheism/49960");
+		File documentCorpus = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus");
+		File potentialPlagiarisedFile = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus/1.txt");
 		if (potentialPlagiarisedFile.isDirectory()) {
 			File[] filesPotentiallyPlagiarised = potentialPlagiarisedFile.listFiles();
 			showTestDirectory(documentCorpus, filesPotentiallyPlagiarised);
@@ -48,7 +49,7 @@ public class IterateDir
 				fileData = fileContents.split("\\.\\n?\\.\\r");
 				for(int i=0; i<fileData.length;i++) {
 					fileData[i] = fileData[i].trim().replaceAll("\\s+", " ");
-					System.out.println("Paragraph wise Test File Data: "+fileData[i]);
+					//System.out.println("Paragraph wise Test File Data: "+fileData[i]);
 					if(documentCorpus.isDirectory()) {
 						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], true, false, false, false, false);
 					} else {
@@ -124,7 +125,7 @@ public class IterateDir
 			}
 			br.close();
 			String fileContents = sb.toString();
-			System.out.println("Corpus File Contents: "+fileContents);
+			//System.out.println("Corpus File Contents: "+fileContents);
 			if(lcss == true) {
 				Lcss lcssObj = new Lcss();
 				lcssObj.mainLCSS(fileContents, testPattern);
