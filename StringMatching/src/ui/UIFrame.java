@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import algorithms.BoyerMoore;
 import algorithms.LcssCompute;
+import algorithms.NaiveString;
 
 public class UIFrame extends JFrame implements ActionListener {
 
@@ -192,14 +193,14 @@ public class UIFrame extends JFrame implements ActionListener {
 			
 			if (chckbxBoyerMoore.isSelected()) {
 				Boyerflag = 1;
-				ArrayList<String> result=BoyerMoore.computeAlgo(documentCorpus, potentialPlagiarisedFile);
+				ArrayList<String> result_b=BoyerMoore.computeAlgo(documentCorpus, potentialPlagiarisedFile);
 				
-				System.out.println(result.size());
-				String final_res="";
-				for(String res:result)
-					final_res+=res+"\n";
+				System.out.println(result_b.size());
+				String final_res_b="";
+				for(String res:result_b)
+					final_res_b+=res+"\n";
 				
-				tABoyer.setText(final_res);
+				tABoyer.setText(final_res_b);
 			}
 			if (chckbxKmp.isSelected()) {
 				Kmpflag = 1;
@@ -207,7 +208,15 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 			if (chckbxNaive.isSelected()) {
 				Naiveflag = 1;
-				System.out.println("Naive: " + Naiveflag);
+				
+				ArrayList<String> result=NaiveString.computeAlgo(documentCorpus, potentialPlagiarisedFile);
+				
+				String final_res="";
+				for(String res:result)
+					final_res+=res+"\n";
+				
+				tANaive.setText(final_res);
+				
 			}
 			if (chckbxRabinKarp.isSelected()) {
 				Rabinflag = 1;
