@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import algorithms.BoyerMoore;
 import algorithms.LcssCompute;
 
 public class UIFrame extends JFrame implements ActionListener {
@@ -184,11 +185,21 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 		}
 		if (e.getSource() == btnStart) {
-			dirPath = tfDirPath.getText();
-			filePath = tfFilePath.getText();
+			dirPath=tfDirPath.getText();
+			filePath=tfFilePath.getText();
+			documentCorpus=new File(dirPath);
+			potentialPlagiarisedFile=new File(filePath);
+			
 			if (chckbxBoyerMoore.isSelected()) {
 				Boyerflag = 1;
-				System.out.println("boyer Moore: " + Boyerflag);
+				ArrayList<String> result=BoyerMoore.computeAlgo(documentCorpus, potentialPlagiarisedFile);
+				
+				System.out.println(result.size());
+				String final_res="";
+				for(String res:result)
+					final_res+=res+"\n";
+				
+				tABoyer.setText(final_res);
 			}
 			if (chckbxKmp.isSelected()) {
 				Kmpflag = 1;
@@ -205,8 +216,7 @@ public class UIFrame extends JFrame implements ActionListener {
 			if (chckbxLcss.isSelected()) {
 				Lcssflag = 1;
 				// System.out.println("LCSS flag: "+Lcssflag);
-				documentCorpus = new File(dirPath);
-				potentialPlagiarisedFile = new File(filePath);
+				
 				long startTime = System.currentTimeMillis();
 				ArrayList<String> percentage = LcssCompute.compute(
 						documentCorpus, potentialPlagiarisedFile);
