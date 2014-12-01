@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JCheckBox;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +21,8 @@ import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
+
+import algorithms.LcssCompute;
 
 public class UIFrame extends JFrame implements ActionListener {
 
@@ -35,10 +38,19 @@ public class UIFrame extends JFrame implements ActionListener {
 	private JCheckBox chckbxNaive;
 	private JCheckBox chckbxSelectAll;
 	private JButton btnStart;
+	
+	private JTextArea tALcss;
+	private JTextArea tANaive;
+	private JTextArea tABoyer;
+	private JTextArea tARabin;
+	private JTextArea tAKmp;
+	
 	JFileChooser filechooser;
 	String path="";
-	String filePath="";
-	String dirPath="";
+	static String filePath="";
+	static String dirPath="";
+	File documentCorpus = null;//new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus");
+	File potentialPlagiarisedFile = null;//new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/1.txt");
 	int Kmpflag=0;
 	int Boyerflag=0;
 	int Lcssflag=0;
@@ -122,23 +134,23 @@ public class UIFrame extends JFrame implements ActionListener {
 		panel_1.add(chckbxKmp);
 		panel_1.add(chckbxSelectAll);
 
-		JTextArea tALcss = new JTextArea();
+		tALcss = new JTextArea();
 		tALcss.setBounds(100, 125, 600, 200);
 		panel_1.add(tALcss);
 
-		JTextArea tANaive = new JTextArea();
+		tANaive = new JTextArea();
 		tANaive.setBounds(703, 125, 600, 200);
 		panel_1.add(tANaive);
 
-		JTextArea tABoyer = new JTextArea();
+		tABoyer = new JTextArea();
 		tABoyer.setBounds(100, 400, 350, 300);
 		panel_1.add(tABoyer);
 
-		JTextArea tARabin = new JTextArea();
+		tARabin = new JTextArea();
 		tARabin.setBounds(500, 400, 350, 300);
 		panel_1.add(tARabin);
 
-		JTextArea tAKmp = new JTextArea();
+		tAKmp = new JTextArea();
 		tAKmp.setBounds(1000, 400, 350, 300);
 		panel_1.add(tAKmp);
 
@@ -191,7 +203,11 @@ public class UIFrame extends JFrame implements ActionListener {
 				System.out.println("Rabin flag: "+Rabinflag);
 			}if(chckbxLcss.isSelected()){
 				Lcssflag=1;
-				System.out.println("LCSS flag: "+Lcssflag);
+				//System.out.println("LCSS flag: "+Lcssflag);
+				documentCorpus=new File(dirPath);
+				potentialPlagiarisedFile=new File(filePath);
+				double percentage=LcssCompute.compute(documentCorpus, potentialPlagiarisedFile);
+				tALcss.setText("total percentage match :"+percentage*100);
 			}
 			System.out.println("Directory: "+dirPath);
 			System.out.println("File: "+filePath);
