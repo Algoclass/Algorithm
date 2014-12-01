@@ -1,16 +1,15 @@
-package algorithms;
+ package algorithms;
 
 import java.io.*;
 
 public class IterateDir 
 {
-	String pattern="";
 	public static void main(String... args) {
-		//File pat=new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/1.txt");
-		//String path="/Users/Devcenter/Dropbox/padhai/sem3/Algo";
-		//File documentCorpus = new File("res/Document_corpus/alt.atheism/49960");
-		File documentCorpus = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus");
-		File potentialPlagiarisedFile = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus/1.txt");
+
+		File documentCorpus = new File("res/Document_corpus/by.txt");
+		//File documentCorpus = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus");
+		File potentialPlagiarisedFile = new File("res/Potential_plagiarised_files/ts.txt");
+		//File potentialPlagiarisedFile = new File("/Users/Devcenter/Dropbox/padhai/sem3/Algo/corpus/1.txt");
 		if (potentialPlagiarisedFile.isDirectory()) {
 			File[] filesPotentiallyPlagiarised = potentialPlagiarisedFile.listFiles();
 			showTestDirectory(documentCorpus, filesPotentiallyPlagiarised);
@@ -32,7 +31,7 @@ public class IterateDir
 				//sb.append(System.lineSeparator());line = br.readLine();
 			}
 			String fileContents = sb.toString().replaceAll("\\s+", " ");
-			System.out.println("Test File Contents: "+fileContents);
+			//System.out.println("Test File Contents: "+fileContents);
 			br.close();
 			System.out.println("Enter number for the respective algorithm to run on above test file.");
 			System.out.println("1: LCSS");
@@ -49,11 +48,11 @@ public class IterateDir
 				fileData = fileContents.split("\\.\\n?\\.\\r");
 				for(int i=0; i<fileData.length;i++) {
 					fileData[i] = fileData[i].trim().replaceAll("\\s+", " ");
-					//System.out.println("Paragraph wise Test File Data: "+fileData[i]);
+					System.out.println("Paragraph wise Test File Data: "+fileData[i]);
 					if(documentCorpus.isDirectory()) {
 						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], true, false, false, false, false);
 					} else {
-						readCorpusFile(documentCorpus, fileContents, true, false, false, false, false);
+						readCorpusFile(documentCorpus, fileData[i], true, false, false, false, false);
 					}
 				}
 				break;
@@ -66,7 +65,7 @@ public class IterateDir
 					if(documentCorpus.isDirectory()) {
 						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], false, true, false, false, false);
 					} else {
-						readCorpusFile(documentCorpus, fileContents, false, true, false, false, false);
+						readCorpusFile(documentCorpus, fileData[i], false, true, false, false, false);
 					}
 				}
 				break;
@@ -79,7 +78,7 @@ public class IterateDir
 					if(documentCorpus.isDirectory()) {
 						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], false, false, true, false, false);
 					} else {
-						readCorpusFile(documentCorpus, fileContents, false, false, true, false, false);
+						readCorpusFile(documentCorpus, fileData[i], false, false, true, false, false);
 					}
 				}
 				break;
@@ -92,13 +91,22 @@ public class IterateDir
 					if(documentCorpus.isDirectory()) {
 						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], false, false, false, true, false);
 					} else {
-						readCorpusFile(documentCorpus, fileContents, false, false, false, true, false);
+						readCorpusFile(documentCorpus, fileData[i], false, false, false, true, false);
 					}
 				}
 				break;
 			case 5:
 				//Rabin Karp
-				// TODO
+				fileData = fileContents.split("\\. ");
+				for(int i=0; i<fileData.length;i++) {
+					fileData[i] = fileData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Sentence wise Test File Data: "+fileData[i]);
+					if(documentCorpus.isDirectory()) {
+						readCorpusDirectory(documentCorpus.listFiles(), fileData[i], false, false, false, false, true);
+					} else {
+						readCorpusFile(documentCorpus, fileData[i], false, false, false, false, true);
+					}
+				}
 				break;
 			default:
 				System.out.println("Wrong Entry");
@@ -124,26 +132,60 @@ public class IterateDir
 				//sb.append(System.lineSeparator());
 			}
 			br.close();
-			String fileContents = sb.toString();
+			String fileInCorpusContents = sb.toString();
 			//System.out.println("Corpus File Contents: "+fileContents);
+			String [] fileInCorpusData;
 			if(lcss == true) {
-				Lcss lcssObj = new Lcss();
-				lcssObj.mainLCSS(fileContents, testPattern);
+				fileInCorpusData = fileInCorpusContents.split("\\.\\n?\\.\\r");
+				double lcssLength = 0;
+				for(int i=0; i<fileInCorpusData.length;i++) {
+					fileInCorpusData[i] = fileInCorpusData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Paragraph wise Test File Data: "+fileInCorpusData[i]);
+					Lcss lcssObj = new Lcss();
+					lcssLength = lcssLength + lcssObj.search(fileInCorpusData[i], testPattern).length();
+				}
+				double percent = (lcssLength*100)/testPattern.length();
+				System.out.println("Percentage match: "+percent);
+				// TODO
 			}
 			if(naive == true) {
-				NaiveString naiveStringObj = new NaiveString();
-				naiveStringObj.search(fileContents.toCharArray(), testPattern.toCharArray());
+				fileInCorpusData = fileInCorpusContents.split("\\. ");
+				for(int i=0; i<fileInCorpusData.length;i++) {
+					fileInCorpusData[i] = fileInCorpusData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Sentence wise Train File Data: "+fileInCorpusData[i]);
+					NaiveString naiveStringObj = new NaiveString();
+					naiveStringObj.search(fileInCorpusData[i].toCharArray(), testPattern.toCharArray());
+				}
+				//TODO
 			}
 			if(kmp == true) {
-				//Kmp kmpObj = new Kmp();
+				fileInCorpusData = fileInCorpusContents.split("\\. ");
+				for(int i=0; i<fileInCorpusData.length;i++) {
+					fileInCorpusData[i] = fileInCorpusData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Sentence wise Test File Data: "+fileInCorpusData[i]);
+					//Kmp kmpObj = new Kmp();
+					//kmpObj.search(fileInCorpusData[i].toCharArray(), testPattern.toCharArray());
+				}
 				// TODO
 			}
 			if(boyerMoore == true) {
-				BoyerMoore boyerMooreObj = new BoyerMoore();
-				// TODO
+				fileInCorpusData = fileInCorpusContents.split("\\. ");
+				for(int i=0; i<fileInCorpusData.length;i++) {
+					fileInCorpusData[i] = fileInCorpusData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Sentence wise Train File Data: "+fileInCorpusData[i]);
+					BoyerMoore boyerMooreObj = new BoyerMoore();
+					boyerMooreObj.search(fileInCorpusData[i].toCharArray(), testPattern.toCharArray());
+				}
+				//TODO
 			}
 			if(rabinKarp == true) {
-				RabinKarp rabinKarpObj = new RabinKarp();
+				fileInCorpusData = fileInCorpusContents.split("\\. ");
+				for(int i=0; i<fileInCorpusData.length;i++) {
+					fileInCorpusData[i] = fileInCorpusData[i].trim().replaceAll("\\s+", " ");
+					System.out.println("Sentence wise Train File Data: "+fileInCorpusData[i]);
+					RabinKarp rabinKarpObj = new RabinKarp();
+					//rabinKarpObj.search(fileInCorpusData[i].toCharArray(), testPattern.toCharArray());
+				}
 				// TODO
 			}
 		} catch (FileNotFoundException e) {
@@ -176,27 +218,5 @@ public class IterateDir
 				readCorpusFile(fileToRead, testPattern, lcss, naive, kmp, boyerMoore, rabinKarp);
 			}
 		}
-	}
-
-	public static void readFile(File fileToRead) {
-		System.out.println("parent: " + fileToRead.getName());
-		try(BufferedReader br = new BufferedReader(new FileReader(fileToRead))) {
-			StringBuilder sb = new StringBuilder();
-			String line ;
-			while ((line= br.readLine()) != null) {
-				sb.append(line);
-				sb.append(System.lineSeparator());
-			}
-			br.close();
-			String fileContents = sb.toString();
-			System.out.println(fileContents);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void calculate(File test) {
 	}
 }
