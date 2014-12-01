@@ -78,7 +78,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		tfDirPath = new JTextField();
 		panel.add(tfDirPath);
-		tfDirPath.setColumns(10);
+		tfDirPath.setColumns(50);
 
 		btnDir = new JButton("Directory");
 		panel.add(btnDir);
@@ -86,7 +86,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		tfFilePath = new JTextField();
 		panel.add(tfFilePath);
-		tfFilePath.setColumns(10);
+		tfFilePath.setColumns(50);
 
 		btnPattern = new JButton("Pattern");
 		panel.add(btnPattern);
@@ -109,9 +109,11 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		chckbxKmp = new JCheckBox("KMP");
 		chckbxKmp.setBounds(791, 59, 63, 29);
-
+		
+		
 		chckbxSelectAll = new JCheckBox("Select All");
 		chckbxSelectAll.setBounds(854, 59, 97, 29);
+		chckbxSelectAll.addActionListener(this);
 		panel_1.setLayout(null);
 		panel_1.add(chckbxLcss);
 		panel_1.add(chckbxNaive);
@@ -121,23 +123,23 @@ public class UIFrame extends JFrame implements ActionListener {
 		panel_1.add(chckbxSelectAll);
 
 		JTextArea tALcss = new JTextArea();
-		tALcss.setBounds(490, 125, 200, 50);
+		tALcss.setBounds(100, 125, 600, 200);
 		panel_1.add(tALcss);
 
 		JTextArea tANaive = new JTextArea();
-		tANaive.setBounds(703, 125, 200, 50);
+		tANaive.setBounds(703, 125, 600, 200);
 		panel_1.add(tANaive);
 
 		JTextArea tABoyer = new JTextArea();
-		tABoyer.setBounds(386, 214, 200, 50);
+		tABoyer.setBounds(100, 400, 350, 300);
 		panel_1.add(tABoyer);
 
 		JTextArea tARabin = new JTextArea();
-		tARabin.setBounds(592, 214, 200, 50);
+		tARabin.setBounds(500, 400, 350, 300);
 		panel_1.add(tARabin);
 
 		JTextArea tAKmp = new JTextArea();
-		tAKmp.setBounds(798, 214, 200, 50);
+		tAKmp.setBounds(1000, 400, 350, 300);
 		panel_1.add(tAKmp);
 
 		btnStart = new JButton("Start");
@@ -193,6 +195,24 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 			System.out.println("Directory: "+dirPath);
 			System.out.println("File: "+filePath);
+		}
+		
+		
+		if(chckbxSelectAll.isSelected())
+		{
+			
+			chckbxKmp.setSelected(true);
+			chckbxBoyerMoore.setSelected(true);
+			chckbxLcss.setSelected(true);
+			chckbxNaive.setSelected(true);
+			chckbxRabinKarp.setSelected(true);
+		}
+		else if(!chckbxSelectAll.isSelected()){
+			chckbxKmp.setSelected(false);
+			chckbxBoyerMoore.setSelected(false);
+			chckbxLcss.setSelected(false);
+			chckbxNaive.setSelected(false);
+			chckbxRabinKarp.setSelected(false);
 		}
 		tfDirPath.setCaretPosition(tfDirPath.getDocument().getLength());    
 	
