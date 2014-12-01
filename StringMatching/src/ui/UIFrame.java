@@ -78,7 +78,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		tfDirPath = new JTextField();
 		panel.add(tfDirPath);
-		tfDirPath.setColumns(50);
+		tfDirPath.setColumns(30);
 
 		btnDir = new JButton("Directory");
 		panel.add(btnDir);
@@ -86,7 +86,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		tfFilePath = new JTextField();
 		panel.add(tfFilePath);
-		tfFilePath.setColumns(50);
+		tfFilePath.setColumns(30);
 
 		btnPattern = new JButton("Pattern");
 		panel.add(btnPattern);
