@@ -55,7 +55,8 @@ public class Lcss {
 	public static void main(String[] args) {
 		String pattern = "abhinav bansal cc";
 		String text = "acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsn acsbdwvhgvrigbrbnbtbavfwtb bfdgagdsnl";
-		double lcssLength = search(pattern, text).length();
+		String lcss = search(pattern, text);
+		double lcssLength = lcss.length();
 		double percent = (lcssLength*100)/pattern.length();
 		System.out.println("Percentage match: "+percent);
 	}
