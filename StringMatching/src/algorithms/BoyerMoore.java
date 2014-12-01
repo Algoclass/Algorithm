@@ -8,6 +8,52 @@ public class BoyerMoore {
 	final static int  NO_OF_CHARS=100000;
 	static int testCounter = 0;
 	static int patternCounter =0;
+	static double match_count =0;
+	static ArrayList<String> boyer_more_list = new ArrayList<String>();
+	static int runnigTime =0;
+	
+	public static ArrayList<String> computeAlgo(File documentCorpus, File testFile){
+	
+		long start= System.currentTimeMillis();
+		ArrayList<String> pattern_list=null;
+		File files[] = documentCorpus.listFiles();
+		
+		
+		
+		for(int fi=0;fi<files.length;fi++){
+			ArrayList<ArrayList<String>> pattern= getList(testFile);
+			ArrayList<ArrayList<String>> corpus= getList(files[fi]);
+			
+			
+			ArrayList<String> corpus_list= corpus.get(1);
+			pattern_list= pattern.get(1);
+			
+			for(int i=0;i<pattern_list.size();i++){
+		    	String p = pattern_list.get(i);
+		    	//t= t.replaceAll(" ","");
+		    	char pat[] = p.toCharArray();
+		    	patternCounter = i; 
+		    	for(int j=0;j<corpus_list.size();j++){
+		    		String t = corpus_list.get(j);
+		    		//p= p.replaceAll(" ","");
+		    		char txt[] =t.toCharArray();
+		    		testCounter = j;
+		    		search(txt, pat,fi,corpus.get(0));
+		    	}
+		    }
+		}
+		
+		double count_total_sentence = pattern_list.size();
+		double percentage = match_count/count_total_sentence;
+		System.out.println(percentage);
+		
+		long end= System.currentTimeMillis();
+		boyer_more_list.add("Total percentage match :"+(percentage)*100);
+		boyer_more_list.add("Total time to run the algorithm"+(end-start) +" miliseconds");
+		return boyer_more_list;
+	}
+	
+	
 	
 	public static void main(String args[])
 	{
@@ -18,7 +64,7 @@ public class BoyerMoore {
 	    p= p.replaceAll(" ","");
 	    char pat[] =p.toCharArray();
 		*/
-		String filepath="by.txt";
+		/*String filepath="by.txt";
 	    ArrayList<String> text = getList(filepath);
 	    ArrayList<String> pattern = getList("ts.txt");
 
@@ -34,26 +80,30 @@ public class BoyerMoore {
 	    		testCounter = j;
 	    		search(txt, pat);
 	    	}
-	    }
+	    }*/
 	    
 	}
 	
 
-	static ArrayList<String> getList(String filepath){
+	static ArrayList<ArrayList<String>> getList(File file){
 
-		ArrayList<String> list=null;
+		ArrayList<ArrayList<String>> list = new  ArrayList<ArrayList<String>>();
+		ArrayList<String> para_list=null;
+		ArrayList<String> sentence_list=null;
 		try{
 
-			File file = new File (filepath);
-			
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String line;
-			list = new ArrayList<String>();
+			para_list = new ArrayList<String>();
+			sentence_list = new ArrayList<String>();
 			while ((line = br.readLine()) != null) {
    				// process the line.
 				if(line.length()!=0)
 				{
-					list.add(line);
+					para_list.add(line);
+					String temp[]=line.split("\\. ");
+					for(String sentence:temp)
+						sentence_list.add(sentence);
 				}
 			}
 			 
@@ -62,14 +112,18 @@ public class BoyerMoore {
 		}catch(Exception e){
 
 		}
+		list.add(para_list);
+		list.add(sentence_list);
 		return list;
 	}
 
 
 	/* A pattern searching function that uses Bad Character Heuristic of
 	   Boyer Moore Algorithm */
-	static void search(char pat[], char txt[])
+	static void search(char txt[],char pat[],int file_number,ArrayList<String> corpus)
 	{
+		
+		String patt = String.copyValueOf(pat);
 	    int m = pat.length;
 	    int n = txt.length;
 	 	//System.out.println(n +"---------------"+m);
@@ -93,6 +147,14 @@ public class BoyerMoore {
 	           will become -1 after the above loop */
 	        if (j < 0)
 	        {
+	        	for(int k=0;k<corpus.size();k++)
+	        	{
+	        		if(corpus.get(k).contains(patt))
+	        		{
+	        			String sub = corpus.get(k).substring(0,30);
+	        			boyer_more_list.add("Pattern found in File "+file_number +" at para"+k +"("+sub+")" + "for sententence (" +patt.substring(0,20)+")");
+	        		}
+	        	}
 	        	System.out.println("Pattern found for para in pattern"+patternCounter+" for test"+testCounter);
 	            //System.out.println("pattern occurs at shift"+ s);
 	 
@@ -101,7 +163,7 @@ public class BoyerMoore {
 	               The condition s+m < n is necessary for the case when
 	               pattern occurs at the end of text */
 	            s += (s+m < n)? m-badchar[txt[s+m]] : 1;
-	 
+	            match_count++;
 	        }
 	 
 	        else
