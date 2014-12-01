@@ -68,7 +68,7 @@ public class BoyerMoore {
 
 	/* A pattern searching function that uses Bad Character Heuristic of
 	   Boyer Moore Algorithm */
-	static void search( char txt[],  char pat[])
+	static void search(char pat[], char txt[])
 	{
 	    int m = pat.length;
 	    int n = txt.length;
@@ -129,7 +129,7 @@ public class BoyerMoore {
 	}
 	
 	static int max (int a, int b) 
-	{ 
+	{
 		return (a > b)? a: b; 
 	}
 }

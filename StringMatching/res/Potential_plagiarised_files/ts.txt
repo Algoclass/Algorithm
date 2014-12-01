@@ -1,0 +1,5 @@
+The bad-character rule considers the character in T at which the comparison process failed (assuming such a failure occurred). The next occurrence of that character to the left in P is found, and a shift which brings that occurrence in line with the mismatched occurrence in T is proposed. If the mismatched character does not occur to the left in P, a shift is proposed that moves the entirety of P past the point of mismatch.
+
+Methods vary on the exact form the table for the bad character rule should take, but a simple constant-time lookup solution is as follows: create a 2D table which is indexed first by the index of the character c in the alphabet and second by the index i in the pattern. This lookup will return the occurrence of c in P with the next-highest index j < i or -1 if there is no such occurrence. The proposed shift will then be i - j, with O(1) lookup time and O(kn) space, assuming a finite alphabet of length k.
+
+Various implementations exist in different programming languages. In C++, Boost provides the generic Boyer–Moore search implementation under the Algorithm library.
