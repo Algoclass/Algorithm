@@ -135,24 +135,33 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		tALcss = new JTextArea();
 		tALcss.setBounds(100, 125, 600, 200);
-		JScrollPane tAlcssScroll = new JScrollPane(tALcss);
-		panel_1.add(tALcss);
+		JScrollPane scroll_lcss = new JScrollPane(tALcss);
+		scroll_lcss.setBounds(100, 125, 600, 200);
+		panel_1.add(scroll_lcss);
 
 		tANaive = new JTextArea();
 		tANaive.setBounds(703, 125, 600, 200);
-		panel_1.add(tANaive);
+		JScrollPane scroll_naive = new JScrollPane(tANaive);
+		scroll_naive.setBounds(703, 125, 600, 200);
+		panel_1.add(scroll_naive);
 
 		tABoyer = new JTextArea();
 		tABoyer.setBounds(100, 400, 350, 300);
-		panel_1.add(tABoyer);
+		JScrollPane scroll_boyer = new JScrollPane(tABoyer);
+		scroll_boyer.setBounds(100, 400, 350, 300);
+		panel_1.add(scroll_boyer);
 
 		tARabin = new JTextArea();
 		tARabin.setBounds(500, 400, 350, 300);
-		panel_1.add(tARabin);
+		JScrollPane scroll_rabin = new JScrollPane(tARabin);
+		scroll_rabin.setBounds(500, 400, 350, 300);
+		panel_1.add(scroll_rabin);
 
 		tAKmp = new JTextArea();
 		tAKmp.setBounds(1000, 400, 350, 300);
-		panel_1.add(tAKmp);
+		JScrollPane scroll_kmp = new JScrollPane(tAKmp);
+		scroll_kmp.setBounds(1000, 400, 350, 300);
+		panel_1.add(scroll_kmp);
 
 		btnStart = new JButton("Start");
 		btnStart.setBounds(625, 88, 115, 29);
@@ -186,20 +195,21 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 		}
 		if (e.getSource() == btnStart) {
-			dirPath=tfDirPath.getText();
-			filePath=tfFilePath.getText();
-			documentCorpus=new File(dirPath);
-			potentialPlagiarisedFile=new File(filePath);
-			
+			dirPath = tfDirPath.getText();
+			filePath = tfFilePath.getText();
+			documentCorpus = new File(dirPath);
+			potentialPlagiarisedFile = new File(filePath);
+
 			if (chckbxBoyerMoore.isSelected()) {
 				Boyerflag = 1;
-				ArrayList<String> result_b=BoyerMoore.computeAlgo(documentCorpus, potentialPlagiarisedFile);
-				
+				ArrayList<String> result_b = BoyerMoore.computeAlgo(
+						documentCorpus, potentialPlagiarisedFile);
+
 				System.out.println(result_b.size());
-				String final_res_b="";
-				for(String res:result_b)
-					final_res_b+=res+"\n";
-				
+				String final_res_b = "";
+				for (String res : result_b)
+					final_res_b += res + "\n";
+
 				tABoyer.setText(final_res_b);
 			}
 			if (chckbxKmp.isSelected()) {
@@ -208,15 +218,16 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 			if (chckbxNaive.isSelected()) {
 				Naiveflag = 1;
-				
-				ArrayList<String> result=NaiveString.computeAlgo(documentCorpus, potentialPlagiarisedFile);
-				
-				String final_res="";
-				for(String res:result)
-					final_res+=res+"\n";
-				
+
+				ArrayList<String> result = NaiveString.computeAlgo(
+						documentCorpus, potentialPlagiarisedFile);
+
+				String final_res = "";
+				for (String res : result)
+					final_res += res + "\n";
+
 				tANaive.setText(final_res);
-				
+
 			}
 			if (chckbxRabinKarp.isSelected()) {
 				Rabinflag = 1;
@@ -225,7 +236,7 @@ public class UIFrame extends JFrame implements ActionListener {
 			if (chckbxLcss.isSelected()) {
 				Lcssflag = 1;
 				// System.out.println("LCSS flag: "+Lcssflag);
-				
+
 				long startTime = System.currentTimeMillis();
 				ArrayList<String> percentage = LcssCompute.compute(
 						documentCorpus, potentialPlagiarisedFile);
