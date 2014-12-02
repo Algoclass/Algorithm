@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import algorithms.BoyerMoore;
 import algorithms.ChartRender;
+import algorithms.Kmp;
 import algorithms.LcssCompute;
 import algorithms.NaiveString;
 import algorithms.RabinKarp;
@@ -224,10 +225,21 @@ public class UIFrame extends JFrame implements ActionListener {
 
 				tABoyer.setText(final_res_b);
 			}
+			
+			
 			if (chckbxKmp.isSelected()) {
 				Kmpflag = 1;
-				System.out.println("KMP : " + Kmpflag);
+				ArrayList<String> result = Kmp.computeAlgo(
+						documentCorpus, potentialPlagiarisedFile);
+
+				String final_res = "";
+				for (String res : result)
+					final_res += res + "\n";
+
+				tAKmp.setText(final_res);
 			}
+			
+			
 			if (chckbxNaive.isSelected()) {
 				Naiveflag = 1;
 
