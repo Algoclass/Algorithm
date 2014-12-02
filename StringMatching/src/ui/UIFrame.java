@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,7 @@ import algorithms.CopyBarChart;
 import algorithms.Kmp;
 import algorithms.LcssCompute;
 import algorithms.NaiveString;
+import algorithms.PlagPercent;
 import algorithms.RabinKarp;
 
 public class UIFrame extends JFrame implements ActionListener {
@@ -60,6 +62,7 @@ public class UIFrame extends JFrame implements ActionListener {
 	int Lcssflag = 0;
 	int Naiveflag = 0;
 	int Rabinflag = 0;
+	int threshhold = 80;
 
 	/**
 	 * Launch the application.
@@ -96,6 +99,7 @@ public class UIFrame extends JFrame implements ActionListener {
 		tfDirPath = new JTextField();
 		panel.add(tfDirPath);
 		tfDirPath.setColumns(30);
+		tfDirPath.setText("/Users/Devcenter/Algo/Document_corpus");
 
 		btnDir = new JButton("Directory");
 		panel.add(btnDir);
@@ -104,6 +108,7 @@ public class UIFrame extends JFrame implements ActionListener {
 		tfFilePath = new JTextField();
 		panel.add(tfFilePath);
 		tfFilePath.setColumns(30);
+		tfFilePath.setText("/Users/Devcenter/Algo/Plagiarised file.txt");
 
 		btnPattern = new JButton("Pattern");
 		panel.add(btnPattern);
@@ -191,6 +196,7 @@ public class UIFrame extends JFrame implements ActionListener {
 			ChartRender.renderChartTiming();
 			BarChartRender.displayBarchart();
 			CopyBarChart.displayBarchart();
+			PlagPercent.dislplayChart();
 		}
 
 		if (e.getSource() == btnDir || e.getSource() == btnPattern) {
@@ -303,5 +309,30 @@ public class UIFrame extends JFrame implements ActionListener {
 		}
 		tfDirPath.setCaretPosition(tfDirPath.getDocument().getLength());
 
+		if (Kmp.match > threshhold) {
+			tAKmp.setBackground(new Color(255, 204, 204));
+		} else {
+			tAKmp.setBackground(new Color(255, 255, 255));
+		}
+		if (BoyerMoore.match > threshhold) {
+			tABoyer.setBackground(new Color(255, 204, 204));
+		} else {
+			tABoyer.setBackground(new Color(255, 255, 255));
+		}
+		if (NaiveString.match > threshhold) {
+			tANaive.setBackground(new Color(255, 204, 204));
+		} else {
+			tANaive.setBackground(new Color(255, 255, 255));
+		}
+		if (LcssCompute.match > threshhold) {
+			tALcss.setBackground(new Color(255, 204, 204));
+		} else {
+			tALcss.setBackground(new Color(255, 255, 255));
+		}
+		if (RabinKarp.match > threshhold) {
+			tARabin.setBackground(new Color(255, 204, 204));
+		} else {
+			tARabin.setBackground(new Color(255, 255, 255));
+		}
 	}
 }
