@@ -4,11 +4,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NaiveString {
 
 	static double match_count = 0;
 	static ArrayList<String> naive_list = new ArrayList<String>();
+	static Map<String , Integer> sentense_map = new HashMap<String,Integer>();
 	static int runnigTime = 0;
 
 	public static ArrayList<String> computeAlgo(File documentCorpus,
@@ -66,8 +69,10 @@ public class NaiveString {
 				if (line.length() != 0) {
 					para_list.add(line);
 					String temp[] = line.split("\\. ");
-					for (String sentence : temp)
+					for (String sentence : temp){
 						sentence_list.add(sentence);
+						sentense_map.put(sentence, 0);
+					}
 				}
 			}
 
@@ -98,25 +103,34 @@ public class NaiveString {
 
 				for (int k = 0; k < corpus.size(); k++) {
 					if (corpus.get(k).contains(patt)) {
-						String sub = corpus.get(k).substring(0,
-								Math.min(30, (corpus.get(k).length() - 1)));
+						
+						String sub="";
+						 if(corpus.get(k).length()>30)
+							  sub= corpus.get(k).substring(0,30);
+						 else
+							 sub = corpus.get(k);
+						 
+						 String patt_sub= "";
+						 if(patt.length()>20)
+						 	patt_sub=patt.substring(0,20);
+						 else
+						 	patt_sub = patt;
+						
 						naive_list.add("Pattern found in File "
-								+ file_number
-								+ " at para"
-								+ k
-								+ "("
-								+ sub
-								+ ")"
-								+ "for sententence ("
-								+ patt.substring(0,
-										Math.min(20, patt.length() - 1)) + ")");
+								+ file_number+ " at para"+ k+ "("+ sub+ ")"+ "for sententence ("+ patt_sub+ ")");
 					}
 				}
 
-				System.out.println("Pattern found at index " + i);
+				/*System.out.println("Pattern found at index " + i);
 				String patternString = new String(pattern);
 				System.out.println("Matched Pattern is : " + patternString);
-				match_count++;
+				*/
+				
+				if(sentense_map.get(patt)==0){
+					match_count++;
+					int val =sentense_map.get(patt);
+					sentense_map.put(patt, val+1);
+				}
 			}
 		}
 	}
