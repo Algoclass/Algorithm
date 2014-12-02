@@ -37,7 +37,7 @@ public class LcssCompute {
 		ArrayList<String> outputList = new ArrayList<String>();
 		System.out.println("Test File: " + testFile.getName());
 		double num = 0;
-		double den = 1;
+		double den = 0;
 
 		HashMap patternTestMap = new HashMap<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(testFile))) {
@@ -101,9 +101,9 @@ public class LcssCompute {
 										+ file.getName()
 										+ " - para="
 										+ testPara
-										.substring(0, Math.min(
-												testPara.length(), 25))
-												+ "... ";
+												.substring(0, Math.min(
+														testPara.length(), 25))
+										+ "... ";
 							}
 						}
 						patternTestMap.put(l, max);
@@ -123,7 +123,7 @@ public class LcssCompute {
 				}
 
 			} // write code for else when it is just a file
-			// ------------------------------------------------
+				// ------------------------------------------------
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
