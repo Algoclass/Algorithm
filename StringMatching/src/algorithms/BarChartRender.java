@@ -47,11 +47,11 @@ public class BarChartRender extends JFrame {
 		// create the dataset...
 		final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-		dataset.addValue(1.0, lcss, time);
+		dataset.addValue(LcssCompute.runningTime, lcss, time);
 		dataset.addValue(5.0, kmp, time);
 		dataset.addValue(4.0, rabinKarp, time);
-		dataset.addValue(5.0, naive, time);
-		dataset.addValue(4.0, boyerMoore, time);
+		dataset.addValue(NaiveString.runnigTime, naive, time);
+		dataset.addValue(BoyerMoore.runnigTime, boyerMoore, time);
 
 		dataset.addValue(1.0, lcss, plagiarism);
 		dataset.addValue(5.0, kmp, plagiarism);
