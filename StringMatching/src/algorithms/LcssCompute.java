@@ -98,13 +98,15 @@ public class LcssCompute {
 							if (max.length() < lcss.length()) {
 								max = lcss;
 								// System.out.println("adding source" + par);
-								source = ": file= "
-										+ file.getName()
-										+ " - para="
-										+ testPara
-										.substring(0, Math.min(
-												testPara.length(), 25))
-												+ "... ";
+								source = "Pattern found in File "
+										// + file.getName()
+										+ var
+										+ " at para"
+										+ par
+										+ "("
+										+ testPara.substring(0, Math.min(
+												testPara.length() - 1, 25))
+										+ ")";
 							}
 						}
 						patternTestMap.put(l, max);

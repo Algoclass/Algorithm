@@ -62,7 +62,7 @@ public class UIFrame extends JFrame implements ActionListener {
 	int Lcssflag = 0;
 	int Naiveflag = 0;
 	int Rabinflag = 0;
-	int threshhold = 80;
+	int threshhold = 40;
 
 	/**
 	 * Launch the application.
