@@ -13,7 +13,7 @@ public class RabinKarp {
 	static double match_count =0;
 	static ArrayList<String> rabin_karp_list = new ArrayList<String>();
 	static Map<String, Integer> sentense_map = new HashMap<String, Integer>();
-	static int runnigTime =0;
+	static public long runnigTime =0;
 	static int q=101;
 	
 	
@@ -64,6 +64,7 @@ public class RabinKarp {
 		long end= System.currentTimeMillis();
 		rabin_karp_list.add("Total percentage match :"+(percentage)*100);
 		rabin_karp_list.add("Total time to run the algorithm"+(end-start) +" miliseconds");
+		runnigTime=end-start;
 		return rabin_karp_list;
 		
 	}

@@ -50,6 +50,7 @@ public class ChartRender extends JFrame {
 		result.setValue("BoyerMore", BoyerMoore.runnigTime);
 		result.setValue("Naive", NaiveString.runnigTime);
 		result.setValue("Lcss", LcssCompute.runningTime);
+		result.setValue("Rabin", RabinKarp.runnigTime);
 		return result;
 
 	}
