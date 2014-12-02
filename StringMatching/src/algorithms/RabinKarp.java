@@ -156,8 +156,19 @@ public class RabinKarp {
 		        	{
 		        		if(corpus.get(k).contains(patt))
 		        		{
-		        			String sub = corpus.get(k).substring(0,30);
-		        			rabin_karp_list.add("Pattern found in File "+file_number +" at para"+k +"("+sub+")" + "for sententence (" +patt.substring(0,20)+")");
+		        			String sub = "";
+							if (corpus.get(k).length() > 30)
+								sub = corpus.get(k).substring(0, 30);
+							else
+								sub = corpus.get(k);
+
+							String patt_sub = "";
+							if (patt.length() > 20)
+								patt_sub = patt.substring(0, 20);
+							else
+								patt_sub = patt;
+
+		        			rabin_karp_list.add("Pattern found in File "+file_number +" at para"+k +"("+sub+")" + "for sententence (" +patt+")");
 		        		}
 		        	}
 	            	if (sentense_map.get(patt) == 0) {
