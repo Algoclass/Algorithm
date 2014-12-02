@@ -56,7 +56,6 @@ public class Kmp {
 		kmp_list.add("Total percentage match :" + (percentage) * 100);
 		kmp_list.add("Total time to run the algorithm" + (end - start)
 				+ " miliseconds");
-		kmp_list.add("End time" + end + " ,Start time" + start);
 
 		return kmp_list;
 	}
