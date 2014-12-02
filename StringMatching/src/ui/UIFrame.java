@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import algorithms.BarChartRender;
 import algorithms.BoyerMoore;
 import algorithms.ChartRender;
+import algorithms.CopyBarChart;
 import algorithms.Kmp;
 import algorithms.LcssCompute;
 import algorithms.NaiveString;
@@ -189,6 +190,7 @@ public class UIFrame extends JFrame implements ActionListener {
 		if (e.getSource() == btnAnalytics) {
 			ChartRender.renderChartTiming();
 			BarChartRender.displayBarchart();
+			CopyBarChart.displayBarchart();
 		}
 
 		if (e.getSource() == btnDir || e.getSource() == btnPattern) {

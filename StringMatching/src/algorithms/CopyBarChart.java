@@ -9,11 +9,11 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class BarChartRender extends JFrame {
+public class CopyBarChart extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	public BarChartRender(String applicationTitle, String chartTitle) {
+	public CopyBarChart(String applicationTitle, String chartTitle) {
 		super(applicationTitle);
 
 		// based on the dataset we create the chart
@@ -47,11 +47,11 @@ public class BarChartRender extends JFrame {
 		// create the dataset...
 		final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-		dataset.addValue(LcssCompute.runningTime, lcss, time);
-		dataset.addValue(Kmp.runningTime, kmp, time);
-		dataset.addValue(RabinKarp.runnigTime, rabinKarp, time);
-		dataset.addValue(NaiveString.runnigTime, naive, time);
-		dataset.addValue(BoyerMoore.runnigTime, boyerMoore, time);
+		dataset.addValue(LcssCompute.match, lcss, plagiarism);
+		dataset.addValue(Kmp.match, kmp, plagiarism);
+		dataset.addValue(RabinKarp.match, rabinKarp, plagiarism);
+		dataset.addValue(NaiveString.match, naive, plagiarism);
+		dataset.addValue(BoyerMoore.match, boyerMoore, plagiarism);
 
 		return dataset;
 
@@ -59,15 +59,15 @@ public class BarChartRender extends JFrame {
 
 	public static void displayBarchart() {
 
-		BarChartRender chart = new BarChartRender("Running time analasys",
-				"Time complexity of algorithms");
+		CopyBarChart chart = new CopyBarChart("% plagiarism in file",
+				"How much plagiarism found");
 		chart.pack();
 		chart.setVisible(true);
 
 	}
 
 	public static void main(String[] args) {
-		BarChartRender chart = new BarChartRender("Running time analasys",
+		CopyBarChart chart = new CopyBarChart("Running time analasys",
 				"How much plagiarism found");
 		chart.pack();
 		chart.setVisible(true);
