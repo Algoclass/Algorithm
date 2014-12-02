@@ -21,6 +21,7 @@ import algorithms.BoyerMoore;
 import algorithms.ChartRender;
 import algorithms.LcssCompute;
 import algorithms.NaiveString;
+import algorithms.RabinKarp;
 
 public class UIFrame extends JFrame implements ActionListener {
 
@@ -242,8 +243,16 @@ public class UIFrame extends JFrame implements ActionListener {
 			}
 			if (chckbxRabinKarp.isSelected()) {
 				Rabinflag = 1;
-				System.out.println("Rabin flag: " + Rabinflag);
+				ArrayList<String> result = RabinKarp.computeAlgo(
+						documentCorpus, potentialPlagiarisedFile);
+				String final_res = "";
+				for (String res : result)
+					final_res += res + "\n";
+
+				tARabin.setText(final_res);
 			}
+			
+			
 			if (chckbxLcss.isSelected()) {
 				Lcssflag = 1;
 				// System.out.println("LCSS flag: "+Lcssflag);
