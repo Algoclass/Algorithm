@@ -11,8 +11,8 @@ public class NaiveString {
 
 	static double match_count = 0;
 	static ArrayList<String> naive_list = new ArrayList<String>();
-	static Map<String , Integer> sentense_map = new HashMap<String,Integer>();
-	static int runnigTime = 0;
+	static Map<String, Integer> sentense_map = new HashMap<String, Integer>();
+	static long runnigTime = 0;
 
 	public static ArrayList<String> computeAlgo(File documentCorpus,
 			File testFile) {
@@ -47,8 +47,9 @@ public class NaiveString {
 		System.out.println(percentage);
 
 		long end = System.currentTimeMillis();
+		runnigTime = end - start;
 		naive_list.add("Total percentage match :" + (percentage) * 100);
-		naive_list.add("Total time to run the algorithm" + (end - start)
+		naive_list.add("Total time to run the algorithm" + runnigTime
 				+ " miliseconds");
 		return naive_list;
 	}
@@ -69,9 +70,10 @@ public class NaiveString {
 				if (line.length() != 0) {
 					para_list.add(line);
 					String temp[] = line.split("\\. ");
-					for (String sentence : temp){
+					for (String sentence : temp) {
 						sentence_list.add(sentence);
-						sentense_map.put(sentence, 0);
+						if (!sentense_map.containsKey(sentence))
+							sentense_map.put(sentence, 0);
 					}
 				}
 			}
@@ -103,33 +105,35 @@ public class NaiveString {
 
 				for (int k = 0; k < corpus.size(); k++) {
 					if (corpus.get(k).contains(patt)) {
-						
-						String sub="";
-						 if(corpus.get(k).length()>30)
-							  sub= corpus.get(k).substring(0,30);
-						 else
-							 sub = corpus.get(k);
-						 
-						 String patt_sub= "";
-						 if(patt.length()>20)
-						 	patt_sub=patt.substring(0,20);
-						 else
-						 	patt_sub = patt;
-						
-						naive_list.add("Pattern found in File "
-								+ file_number+ " at para"+ k+ "("+ sub+ ")"+ "for sententence ("+ patt_sub+ ")");
+
+						String sub = "";
+						if (corpus.get(k).length() > 30)
+							sub = corpus.get(k).substring(0, 30);
+						else
+							sub = corpus.get(k);
+
+						String patt_sub = "";
+						if (patt.length() > 20)
+							patt_sub = patt.substring(0, 20);
+						else
+							patt_sub = patt;
+
+						naive_list.add("Pattern found in File " + file_number
+								+ " at para" + k + "(" + sub + ")"
+								+ "for sententence (" + patt_sub + ")");
 					}
 				}
 
-				/*System.out.println("Pattern found at index " + i);
-				String patternString = new String(pattern);
-				System.out.println("Matched Pattern is : " + patternString);
-				*/
-				
-				if(sentense_map.get(patt)==0){
+				/*
+				 * System.out.println("Pattern found at index " + i); String
+				 * patternString = new String(pattern);
+				 * System.out.println("Matched Pattern is : " + patternString);
+				 */
+
+				if (sentense_map.get(patt) == 0) {
 					match_count++;
-					int val =sentense_map.get(patt);
-					sentense_map.put(patt, val+1);
+					int val = sentense_map.get(patt);
+					sentense_map.put(patt, val + 1);
 				}
 			}
 		}

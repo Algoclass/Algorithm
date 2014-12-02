@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import algorithms.BoyerMoore;
+import algorithms.ChartRender;
 import algorithms.LcssCompute;
 import algorithms.NaiveString;
 
@@ -35,7 +36,7 @@ public class UIFrame extends JFrame implements ActionListener {
 	private JCheckBox chckbxNaive;
 	private JCheckBox chckbxSelectAll;
 	private JButton btnStart;
-
+	private JButton btnAnalytics;
 	private JTextArea tALcss;
 	private JTextArea tANaive;
 	private JTextArea tABoyer;
@@ -168,6 +169,11 @@ public class UIFrame extends JFrame implements ActionListener {
 		panel_1.add(btnStart);
 		btnStart.addActionListener(this);
 
+		btnAnalytics = new JButton(" Runtime Analytics");
+		btnAnalytics.setBounds(750, 88, 115, 29);
+		panel_1.add(btnAnalytics);
+		btnAnalytics.addActionListener(this);
+
 		filechooser = new JFileChooser();
 		filechooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 	}
@@ -176,6 +182,11 @@ public class UIFrame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		// System.out.println(e.getSource());
+
+		if (e.getSource() == btnAnalytics) {
+			ChartRender.renderChartTiming();
+		}
+
 		if (e.getSource() == btnDir || e.getSource() == btnPattern) {
 			int returnVal = filechooser.showOpenDialog(UIFrame.this);
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -237,18 +248,18 @@ public class UIFrame extends JFrame implements ActionListener {
 				Lcssflag = 1;
 				// System.out.println("LCSS flag: "+Lcssflag);
 
-				long startTime = System.currentTimeMillis();
+				// long startTime = System.currentTimeMillis();
 				ArrayList<String> percentage = LcssCompute.compute(
 						documentCorpus, potentialPlagiarisedFile);
-				long endTime = System.currentTimeMillis();
-				long totalTime = endTime - startTime;
+				// long endTime = System.currentTimeMillis();
+				// long totalTime = endTime - startTime;
 				// tALcss.setText("total percentage match :");
 				for (String s : percentage) {
 					tALcss.append(s);
 					tALcss.append("\n");
 				}
 				tALcss.append("Running Time for LCSS :"
-						+ String.valueOf(totalTime) + " ms");
+						+ String.valueOf(LcssCompute.runningTime) + " ms");
 			}
 			System.out.println("Directory: " + dirPath);
 			System.out.println("File: " + filePath);

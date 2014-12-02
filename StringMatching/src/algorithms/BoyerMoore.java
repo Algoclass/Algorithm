@@ -14,8 +14,8 @@ public class BoyerMoore {
 	static int patternCounter = 0;
 	static double match_count = 0;
 	static ArrayList<String> boyer_more_list = new ArrayList<String>();
-	static Map<String , Integer> sentense_map = new HashMap<String,Integer>();
-	static int runnigTime = 0;
+	static Map<String, Integer> sentense_map = new HashMap<String, Integer>();
+	static long runnigTime = 0;
 
 	public static ArrayList<String> computeAlgo(File documentCorpus,
 			File testFile) {
@@ -51,8 +51,9 @@ public class BoyerMoore {
 		System.out.println(percentage);
 
 		long end = System.currentTimeMillis();
+		runnigTime = end - start;
 		boyer_more_list.add("Total percentage match :" + (percentage) * 100);
-		boyer_more_list.add("Total time to run the algorithm" + (end - start)
+		boyer_more_list.add("Total time to run the algorithm" + runnigTime
 				+ " miliseconds");
 		return boyer_more_list;
 	}
@@ -94,9 +95,10 @@ public class BoyerMoore {
 				if (line.length() != 0) {
 					para_list.add(line);
 					String temp[] = line.split("\\. ");
-					for (String sentence : temp){
+					for (String sentence : temp) {
 						sentence_list.add(sentence);
-						sentense_map.put(sentence,0);
+						if (!sentense_map.containsKey(sentence))
+							sentense_map.put(sentence, 0);
 					}
 				}
 			}
@@ -148,22 +150,21 @@ public class BoyerMoore {
 			if (j < 0) {
 				for (int k = 0; k < corpus.size(); k++) {
 					if (corpus.get(k).contains(patt)) {
-						String sub="";
-						 if(corpus.get(k).length()>30)
-							  sub= corpus.get(k).substring(0,30);
-						 else
-							 sub = corpus.get(k);
-						 
-						 String patt_sub= "";
-						 if(patt.length()>20)
-						 	patt_sub=patt.substring(0,20);
-						 else
-						 	patt_sub = patt;
-						 
-						 
-						 boyer_more_list.add("Pattern found in File "+file_number
-						 +" at para"+k +"("+sub+")" + "for sententence ("
-						 +patt_sub+")");
+						String sub = "";
+						if (corpus.get(k).length() > 30)
+							sub = corpus.get(k).substring(0, 30);
+						else
+							sub = corpus.get(k);
+
+						String patt_sub = "";
+						if (patt.length() > 20)
+							patt_sub = patt.substring(0, 20);
+						else
+							patt_sub = patt;
+
+						boyer_more_list.add("Pattern found in File "
+								+ file_number + " at para" + k + "(" + sub
+								+ ")" + "for sententence (" + patt_sub + ")");
 					}
 				}
 				System.out.println("Pattern found for para in pattern"
@@ -177,11 +178,11 @@ public class BoyerMoore {
 				 * of text
 				 */
 				s += (s + m < n) ? m - badchar[txt[s + m]] : 1;
-				
-				if(sentense_map.get(patt)==0){
+
+				if (sentense_map.get(patt) == 0) {
 					match_count++;
-					int val =sentense_map.get(patt);
-					sentense_map.put(patt, val+1);
+					int val = sentense_map.get(patt);
+					sentense_map.put(patt, val + 1);
 				}
 			}
 

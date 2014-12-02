@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class LcssCompute {
+
+	public static long runningTime = 0;
+
 	public static void main(String... args) {
 
 		// File documentCorpus = new File("res/Document_corpus/by.txt");
@@ -29,6 +32,8 @@ public class LcssCompute {
 	}
 
 	public static ArrayList<String> compute(File documentCorpus, File testFile) {
+		long startTime = System.currentTimeMillis();
+
 		ArrayList<String> outputList = new ArrayList<String>();
 		System.out.println("Test File: " + testFile.getName());
 		double num = 0;
@@ -132,7 +137,8 @@ public class LcssCompute {
 			String pc = "Percentage matching= " + String.valueOf(percent) + "%";
 			outputList.add(pc);
 		}
-
+		long endTime = System.currentTimeMillis();
+		runningTime = endTime - startTime;
 		return outputList;
 	}
 }
