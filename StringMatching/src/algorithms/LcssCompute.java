@@ -14,6 +14,7 @@ import java.util.Set;
 public class LcssCompute {
 
 	public static long runningTime = 0;
+	public static double match = 0;
 
 	public static void main(String... args) {
 
@@ -101,9 +102,9 @@ public class LcssCompute {
 										+ file.getName()
 										+ " - para="
 										+ testPara
-												.substring(0, Math.min(
-														testPara.length(), 25))
-										+ "... ";
+										.substring(0, Math.min(
+												testPara.length(), 25))
+												+ "... ";
 							}
 						}
 						patternTestMap.put(l, max);
@@ -123,7 +124,7 @@ public class LcssCompute {
 				}
 
 			} // write code for else when it is just a file
-				// ------------------------------------------------
+			// ------------------------------------------------
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -136,6 +137,7 @@ public class LcssCompute {
 			double percent = num / den * 100;
 			String pc = "Percentage matching= " + String.valueOf(percent) + "%";
 			outputList.add(pc);
+			match = percent;
 		}
 		long endTime = System.currentTimeMillis();
 		runningTime = endTime - startTime;

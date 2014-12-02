@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import algorithms.BarChartRender;
 import algorithms.BoyerMoore;
 import algorithms.ChartRender;
 import algorithms.Kmp;
@@ -149,21 +150,21 @@ public class UIFrame extends JFrame implements ActionListener {
 		panel_1.add(scroll_naive);
 
 		tABoyer = new JTextArea();
-		tABoyer.setBounds(100, 400, 350, 300);
+		tABoyer.setBounds(100, 350, 350, 280);
 		JScrollPane scroll_boyer = new JScrollPane(tABoyer);
-		scroll_boyer.setBounds(100, 400, 350, 300);
+		scroll_boyer.setBounds(100, 350, 350, 280);
 		panel_1.add(scroll_boyer);
 
 		tARabin = new JTextArea();
-		tARabin.setBounds(500, 400, 350, 300);
+		tARabin.setBounds(500, 350, 350, 280);
 		JScrollPane scroll_rabin = new JScrollPane(tARabin);
-		scroll_rabin.setBounds(500, 400, 350, 300);
+		scroll_rabin.setBounds(500, 350, 350, 280);
 		panel_1.add(scroll_rabin);
 
 		tAKmp = new JTextArea();
-		tAKmp.setBounds(1000, 400, 350, 300);
+		tAKmp.setBounds(1000, 350, 350, 280);
 		JScrollPane scroll_kmp = new JScrollPane(tAKmp);
-		scroll_kmp.setBounds(1000, 400, 350, 300);
+		scroll_kmp.setBounds(900, 350, 350, 280);
 		panel_1.add(scroll_kmp);
 
 		btnStart = new JButton("Start");
@@ -187,6 +188,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnAnalytics) {
 			ChartRender.renderChartTiming();
+			BarChartRender.displayBarchart();
 		}
 
 		if (e.getSource() == btnDir || e.getSource() == btnPattern) {
@@ -225,12 +227,11 @@ public class UIFrame extends JFrame implements ActionListener {
 
 				tABoyer.setText(final_res_b);
 			}
-			
-			
+
 			if (chckbxKmp.isSelected()) {
 				Kmpflag = 1;
-				ArrayList<String> result = Kmp.computeAlgo(
-						documentCorpus, potentialPlagiarisedFile);
+				ArrayList<String> result = Kmp.computeAlgo(documentCorpus,
+						potentialPlagiarisedFile);
 
 				String final_res = "";
 				for (String res : result)
@@ -238,8 +239,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 				tAKmp.setText(final_res);
 			}
-			
-			
+
 			if (chckbxNaive.isSelected()) {
 				Naiveflag = 1;
 
@@ -263,8 +263,7 @@ public class UIFrame extends JFrame implements ActionListener {
 
 				tARabin.setText(final_res);
 			}
-			
-			
+
 			if (chckbxLcss.isSelected()) {
 				Lcssflag = 1;
 				// System.out.println("LCSS flag: "+Lcssflag);

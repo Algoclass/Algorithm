@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class NaiveString {
 
+	public static double match = 0;
 	static double match_count = 0;
 	static ArrayList<String> naive_list = new ArrayList<String>();
 	static Map<String, Integer> sentense_map = new HashMap<String, Integer>();
@@ -48,6 +49,7 @@ public class NaiveString {
 
 		long end = System.currentTimeMillis();
 		runnigTime = end - start;
+		match = percentage * 100;
 		naive_list.add("Total percentage match :" + (percentage) * 100);
 		naive_list.add("Total time to run the algorithm" + runnigTime
 				+ " miliseconds");

@@ -48,18 +48,27 @@ public class BarChartRender extends JFrame {
 		final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
 		dataset.addValue(LcssCompute.runningTime, lcss, time);
-		dataset.addValue(5.0, kmp, time);
-		dataset.addValue(4.0, rabinKarp, time);
+		dataset.addValue(Kmp.runningTime, kmp, time);
+		dataset.addValue(RabinKarp.runnigTime, rabinKarp, time);
 		dataset.addValue(NaiveString.runnigTime, naive, time);
 		dataset.addValue(BoyerMoore.runnigTime, boyerMoore, time);
 
-		dataset.addValue(1.0, lcss, plagiarism);
-		dataset.addValue(5.0, kmp, plagiarism);
-		dataset.addValue(4.0, rabinKarp, plagiarism);
-		dataset.addValue(5.0, naive, plagiarism);
-		dataset.addValue(4.0, boyerMoore, plagiarism);
+		dataset.addValue(LcssCompute.match, lcss, plagiarism);
+		dataset.addValue(Kmp.match, kmp, plagiarism);
+		dataset.addValue(RabinKarp.match, rabinKarp, plagiarism);
+		dataset.addValue(NaiveString.match, naive, plagiarism);
+		dataset.addValue(BoyerMoore.match, boyerMoore, plagiarism);
 
 		return dataset;
+
+	}
+
+	public static void displayBarchart() {
+
+		BarChartRender chart = new BarChartRender("Running time analasys",
+				"How much plagiarism found");
+		chart.pack();
+		chart.setVisible(true);
 
 	}
 

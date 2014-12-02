@@ -16,6 +16,7 @@ public class BoyerMoore {
 	static ArrayList<String> boyer_more_list = new ArrayList<String>();
 	static Map<String, Integer> sentense_map = new HashMap<String, Integer>();
 	static long runnigTime = 0;
+	static double match = 0;
 
 	public static ArrayList<String> computeAlgo(File documentCorpus,
 			File testFile) {
@@ -49,7 +50,7 @@ public class BoyerMoore {
 		double count_total_sentence = pattern_list.size();
 		double percentage = match_count / count_total_sentence;
 		System.out.println(percentage);
-
+		match = percentage * 100;
 		long end = System.currentTimeMillis();
 		runnigTime = end - start;
 		boyer_more_list.add("Total percentage match :" + (percentage) * 100);
@@ -69,7 +70,7 @@ public class BoyerMoore {
 		/*
 		 * String filepath="by.txt"; ArrayList<String> text = getList(filepath);
 		 * ArrayList<String> pattern = getList("ts.txt");
-		 * 
+		 *
 		 * for(int i=0;i<pattern.size();i++){ String t = pattern.get(i); t=
 		 * t.replaceAll(" ",""); char txt[] = t.toCharArray(); patternCounter =
 		 * i; for(int j=0;j<text.size();j++){ String p = text.get(j); p=
